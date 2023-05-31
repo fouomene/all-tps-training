@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Ressource Humaine</title>
+</head>
+<body>
+<h1> Liste des directeurs</h1>
+
+<table>
+    <tr>
+        <th>NOM</th>
+        <th>PRENOM</th>
+        <th>AGE</th>
+    </tr>
+
+    <tr th:each="directeur : ${directeurs}">
+        <td th:text="${directeur.nom}">tata</td>
+        <td th:text="${directeur.prenom}">tite</td>
+        <td th:text="${directeur.age}">15</td>
+    </tr>
+
+</table>
+
+<p>
+    <a th:href="@{/}">Retourner à la page d'accueil</a>
+</p>
+
+</body>
+</html>
