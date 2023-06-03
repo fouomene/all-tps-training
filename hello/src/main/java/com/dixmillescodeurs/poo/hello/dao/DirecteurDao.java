@@ -12,7 +12,7 @@ import java.util.List;
 public class DirecteurDao {
 
   public List<Directeur> getAll() {
-    DatabaseRessourceHumain.getInstance().stream().forEach(System.out::println);
+   // DatabaseRessourceHumain.getInstance().stream().forEach(System.out::println);
     return DatabaseRessourceHumain.getInstance();
   }
 

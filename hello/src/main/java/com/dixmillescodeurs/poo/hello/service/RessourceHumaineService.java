@@ -23,7 +23,7 @@ public class RessourceHumaineService {
 
   public List<Directeur> listeDesDirecteurs() {
 
-    directeurDao.getAll().stream().forEach(System.out::println);
+    //directeurDao.getAll().stream().forEach(System.out::println);
 
     return directeurDao.getAll();
 

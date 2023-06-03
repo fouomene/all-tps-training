@@ -28,8 +28,8 @@ public final class DatabaseRessourceHumain {
 
   public static List<Directeur> getListDirecteurFromDatabase() {
     var directeur1 = Directeur.builder()
-        .nom("NANKAM")
-        .prenom("Fabrice")
+        .nom("FARIMATA")
+        .prenom("Douaré")
         .age(13)
         .build();
     var directeur2 = Directeur.builder()
