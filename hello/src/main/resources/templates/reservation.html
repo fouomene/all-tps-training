@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Travel Service : Reservation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <th:block th:replace="fragments/_css.html::css"></th:block>
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.7.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <th:block th:replace="fragments/_header.html::header"></th:block>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Reservation</h2>
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li>reservation</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="section-title">
+              <h2>Reservation</h2>
+              <p>Remplire ce formulaire pour effectuer votre reservation.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+           
+
+            <form action="../static/forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Votre Prenom" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="telepehone" class="form-control" id="telephone" placeholder="Votre Téléphone" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="depart" class="form-control" id="depart" placeholder="Ville de Départ" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="destination" id="destination" placeholder="Ville d'arrivée" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="jour" class="form-control" id="jour" placeholder="Date du voyage" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="heure" id="heure" placeholder="Heure du voyage" required>
+                </div>
+               </div>
+
+
+                <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre reservation a été enregistré avec succes. Merci!</div>
+              </div>
+              <div class="text-center"><button type="submit">Reserver</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+    
+ 
+
+  </main><!-- End #main -->
+
+  <th:block th:replace="fragments/_footer.html::footer"></th:block>
+
+  <th:block th:replace="fragments/_js.html::js"></th:block>
+
+</body>
+
+</html>

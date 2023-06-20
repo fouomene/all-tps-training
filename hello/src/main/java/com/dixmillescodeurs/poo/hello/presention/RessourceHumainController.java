@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RessourceHumainController {
@@ -24,6 +23,24 @@ public class RessourceHumainController {
     model.addAttribute("directeurs", directeurs);
 
     return "listedirecteurs";
+  }
+
+
+  @GetMapping("/voyages")
+  public String listevoyages(Model model) {
+
+    var directeurs = ressourceHumaineService.listeDesDirecteurs();
+
+    model.addAttribute("directeurs", directeurs);
+
+
+    return "voyages";
+  }
+
+  @GetMapping("/reservation")
+  public String formulaireReservation(Model model) {
+
+    return "reservation";
   }
 
 }

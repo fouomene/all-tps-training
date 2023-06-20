@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Travel Service : Voyages</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <th:block th:replace="fragments/_css.html::css"></th:block>
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.7.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <th:block th:replace="fragments/_header.html::header"></th:block>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Voyages</h2>
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li>Voyages</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>Directeurs</h2>
+              <p>Les differents directeurs de notre entreprise...</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+
+              <div th:each="directeur : ${directeurs}" class="col-md-6 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4><a th:text="${directeur.nom}+ ' ' +${directeur.prenom}" href="" >KRIBI</a></h4>
+                  <p th:text="${directeur.age}" >Visiter les belles plages de la ville de Kribi</p>
+                  <div class="text-center">
+                    <a th:href="@{/reservation}" class="more-btn">Reservation<i class="bx bx-chevron-right"></i></a>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <th:block th:replace="fragments/_footer.html::footer"></th:block>
+
+  <th:block th:replace="fragments/_js.html::js"></th:block>
+
+
+</body>
+
+</html>
