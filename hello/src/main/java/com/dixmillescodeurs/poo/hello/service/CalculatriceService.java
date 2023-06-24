@@ -1,8 +1,11 @@
 package com.dixmillescodeurs.poo.hello.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author Daniel FOUOMENE
  */
+@Component
 public class CalculatriceService {
 
    public int somme(int nombre1, int nombre2){

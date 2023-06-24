@@ -48,6 +48,22 @@ class CalculatriceServiceTest {
 
   }
 
+  /* 5+2 = 7 */
+  @Test
+  void whenGiven5and2Somme_shouldReturn7() {
+
+    // Given ou Arrange
+    var nombre1 = 5;
+    var nombre2 = 2;
+
+    // when ou act
+    int resultat = calculatrice.somme(nombre1, nombre2);
+
+    // then ou assert
+    assertThat(resultat).isEqualTo(7);
+
+  }
+
  /* 1+1 = 2 ; 2+3 = 5; 42 +57 = 99 */
  @ParameterizedTest(name = "{0} + {1} should equal to {2}")
  @CsvSource({ "1,1,2", "2,3,5", "42,57,99" })

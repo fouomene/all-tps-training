@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 public class RessourceHumaineService {
 
   private final DirecteurDao directeurDao;
+  private final CalculatriceService calculatriceService;
 
  /*
   public RessourceHumaineService(DirecteurDao directeurDao) {
@@ -33,11 +34,24 @@ public class RessourceHumaineService {
 
     var directeurs = directeurDao.getAll();
 
-    var ageMoyen = directeurs.stream()
+    var sommeAgeDirecteurs = 0;
+    var nombreDirecteurMajeur = 0;
+    for (Directeur directeur : directeurs
+    ) {
+
+      if (directeur.getAge() >= Util.AGE_MAJEUR) {
+        nombreDirecteurMajeur++;
+        sommeAgeDirecteurs = calculatriceService.somme(sommeAgeDirecteurs, directeur.getAge());
+      }
+
+    }
+    var ageMoyen = calculatriceService.division(sommeAgeDirecteurs, nombreDirecteurMajeur);
+
+   /* var ageMoyen = directeurs.stream()
         .filter(directeur -> directeur.getAge() > Util.AGE_MAJEUR)
         .mapToInt(Directeur::getAge)
         .average()
-        .getAsDouble();
+        .getAsDouble();*/
 
     return ageMoyen;
 
@@ -47,14 +61,13 @@ public class RessourceHumaineService {
 
     var directeurs = directeurDao.getAll();
 
-    var nom = directeurs.stream()
-        .filter(directeur -> directeur.getAge() > Util.AGE_MAJEUR)
-        //.map(Directeur::getNom)
-        .map(directeur -> directeur.getNom())
+    var nomPremierDirecteurMajeur=directeurs.stream().filter(directeur -> directeur.getAge()>=Util.AGE_MAJEUR)
         .findFirst()
+        //.map(directeur -> directeur.getNom())
+        .map(Directeur::getNom)
         .get();
 
-    return nom;
+    return nomPremierDirecteurMajeur;
 
   }
 
