@@ -48,18 +48,18 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="section-title" data-aos="fade-right">
-              <h2>Directeurs</h2>
-              <p>Les differents directeurs de notre entreprise...</p>
+              <h2>Voyayes</h2>
+              <p>Les differents Voyayes de notre entreprise...</p>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="row">
 
-              <div th:each="directeur : ${directeurs}" class="col-md-6 d-flex align-items-stretch">
+              <div th:each="voyage : ${voyages}" class="col-md-6 d-flex align-items-stretch">
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                  <h4><a th:text="${directeur.nom}+ ' ' +${directeur.prenom}" href="" >KRIBI</a></h4>
-                  <p th:text="${directeur.age}" >Visiter les belles plages de la ville de Kribi</p>
+                  <h4><a th:text="${voyage.nom}+ ' ' +${voyage.destination}" href="" >KRIBI</a></h4>
+                  <p th:text="${voyage.description}" >Visiter les belles plages de la ville de Kribi</p>
                   <div class="text-center">
                     <a th:href="@{/reservation}" class="more-btn">Reservation<i class="bx bx-chevron-right"></i></a>
                   </div>

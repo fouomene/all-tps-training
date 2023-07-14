@@ -26,21 +26,4 @@ public class RessourceHumainController {
   }
 
 
-  @GetMapping("/voyages")
-  public String listevoyages(Model model) {
-
-    var directeurs = ressourceHumaineService.listeDesDirecteurs();
-
-    model.addAttribute("directeurs", directeurs);
-
-
-    return "voyages";
-  }
-
-  @GetMapping("/reservation")
-  public String formulaireReservation(Model model) {
-
-    return "reservation";
-  }
-
 }
