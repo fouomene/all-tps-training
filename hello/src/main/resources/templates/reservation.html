@@ -55,49 +55,35 @@
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
            
 
-            <form action="../static/forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+            <form
+                    th:method="post"
+                    th:action="@{/enregistrervoyage}"
+                    th:object="${voyageDTO}"
+                     class="php-email-form mt-4">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
+                  <input type="text" name="nom"  th:field="*{nom}"
+
+                         class="form-control" id="name" placeholder="Nom Voyage" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Votre Prenom" required>
+                  <input type="text" class="form-control"  th:field="*{destination}"
+
+                         name="destination" id="destination" placeholder="Destination Voyage" required>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="telepehone" class="form-control" id="telephone" placeholder="Votre Téléphone" required>
+                  <input type="text" name="description" th:field="*{description}"
+
+                         class="form-control" id="description" placeholder="Description Voyage" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required>
+
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="depart" class="form-control" id="depart" placeholder="Ville de Départ" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="destination" id="destination" placeholder="Ville d'arrivée" required>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="jour" class="form-control" id="jour" placeholder="Date du voyage" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="heure" id="heure" placeholder="Heure du voyage" required>
-                </div>
-               </div>
-
-
-                <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Votre reservation a été enregistré avec succes. Merci!</div>
-              </div>
               <div class="text-center"><button type="submit">Reserver</button></div>
             </form>
           </div>
