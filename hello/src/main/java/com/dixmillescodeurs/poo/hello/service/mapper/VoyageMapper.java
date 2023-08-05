@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @author Daniel FOUOMENE
  */
 
-@Mapper(componentModel = "spring",nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy =  NullValueCheckStrategy.ALWAYS)
+@Mapper(componentModel = "spring")
 public interface VoyageMapper {
   Voyage toEntity(VoyageDto voyageDto);
   VoyageDto toDto(Voyage voyage);

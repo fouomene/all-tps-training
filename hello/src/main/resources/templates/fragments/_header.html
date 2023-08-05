@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 
 <th:block th:fragment="header">
@@ -19,6 +19,8 @@
                         <li><a class="nav-link scrollto" th:href="@{/voyages}">Voyages</a></li>
                         <li><a class="nav-link scrollto" th:href="@{/reservation}">Reservation</a></li>
                         <li><a class="nav-link scrollto" th:href="@{/contact}">Contact</a></li>
+                        <li sec:authorize="isAuthenticated()" ><a class="nav-link scrollto" href="#" > <span th:text="${session.username}" ></span></a></li>
+                        <li sec:authorize="isAuthenticated()" ><a class="nav-link scrollto" th:href="@{/logout}">Se deconnecter</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
