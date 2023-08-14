@@ -53,11 +53,16 @@ public class SecurityConfiguration {
             .authorizeHttpRequests((authz) -> {
                         authz.requestMatchers("/").permitAll()
                             .requestMatchers("/voyages").permitAll()
+                            .requestMatchers("/api/voyage/**").permitAll()
+                            .requestMatchers("/v3/api-docs/**", "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v2/api-docs/**",
+                                "/swagger-resources/**","/api/**").permitAll()
                             .anyRequest().authenticated();
                 }
             )
             .formLogin(login ->login.successHandler(loginSuccessHandler) );
-        return http.build();
+        return http.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable()).build();
     }
 
     @Bean

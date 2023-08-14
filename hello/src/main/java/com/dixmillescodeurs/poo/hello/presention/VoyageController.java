@@ -16,7 +16,6 @@ public class VoyageController {
   @Autowired
   private VoyageService voyageService;
 
-
   @GetMapping("/voyages")
   public String listevoyages(Model model) {
 

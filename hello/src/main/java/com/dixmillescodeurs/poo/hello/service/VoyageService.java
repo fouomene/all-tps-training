@@ -72,4 +72,7 @@ public class VoyageService {
   }
 
 
+  public VoyageDto recupererVoyage(long id) {
+        return voyageMapper.toDto(voyageRepository.findById(id).get());
+  }
 }
